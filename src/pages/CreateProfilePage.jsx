@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createProfileWithoutAuth } from '../firebase/firestore';
+import { ImagePlayIcon } from 'lucide-react';
 
 function CreateProfilePage() {
   const navigate = useNavigate();
@@ -60,6 +61,8 @@ function CreateProfilePage() {
       setError('Failed to create profile. Please try again.');
     }
   };
+
+
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -138,6 +141,18 @@ function CreateProfilePage() {
           />
         </div>
         <div className="mb-4">
+          <label htmlFor="photoURL" className="block mb-2">Profile Image URL</label>
+          <input
+            type="url"
+            id="imageLink"
+            name="imageLink"
+            value={formData.imageLink}
+            onChange={handleChange}
+            placeholder="https://example.com/your-image.jpg"
+            className="w-full px-3 py-2 border rounded"
+          />
+        </div>
+        <div className="mb-4">
           <label className="block mb-2">Achievements</label>
           {formData.achievements.map((achievement, index) => (
             <div key={index} className="flex mb-2">
@@ -163,6 +178,7 @@ function CreateProfilePage() {
           >
             Add Achievement
           </button>
+
         </div>
         <button type="submit" className="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 transition duration-200">
           Create Profile
