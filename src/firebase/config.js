@@ -3,13 +3,6 @@ import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  // apiKey: "AIzaSyAi8q2sb_cnYBQvcaDQnnJwe3LURgr-20o",
-  // authDomain: "rishta-central.firebaseapp.com",
-  // projectId: "rishta-central",
-  // storageBucket: "rishta-central.appspot.com",
-  // messagingSenderId: "787481180171",
-  // appId: "1:787481180171:web:a11ead2ad35703441f6f0e",
-  // measurementId: "G-XJ357FJD4Z"
   apiKey: import.meta.env.VITE_API_KEY,
   authDomain: import.meta.env.VITE_AUTH_DOMAIN,
   projectId: import.meta.env.VITE_PROJECT_ID,
